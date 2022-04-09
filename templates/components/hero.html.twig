@@ -1,0 +1,51 @@
+<!-- HERO image-->
+<style>
+	.hero-image {
+
+		position: relative;
+		height: 500px;
+		overflow: hidden;
+		background: url({{ asset("pictures/hero.jpg")}}) no-repeat center;
+		background-size: cover;
+	}
+
+	.hero-container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	.hero-container h1 {
+		font-size: 72px;
+		letter-spacing: 0.2 em;
+		margin: 0;
+	}
+
+	.hero-container h1 span {
+		border: 10px solid white;
+		padding: 6px 14px;
+		display: inline-block;
+	}
+
+	.des {
+		margin: 20px;
+		display: block;
+		font-size: 32 px;
+		text-shadow: 0 0 10 px black;
+	}
+</style>
+
+
+<div class="hero-image">
+	<div class="hero-container">
+		<h1>
+			<span>The Event</span>
+		</h1>
+		<span class="des">agency</span>
+	</div>
+</div>

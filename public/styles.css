@@ -1,0 +1,84 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f1f1f1;
+    font-family: sans-serif;
+    background: url('pictures/bodybg1.jpg') no-repeat center 40% fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.alpha {
+    background-color: #042f68;
+    margin: 20px;
+    display: block;
+}
+
+.alpha p {
+    color: white;
+    margin: 20px;
+    display: block;
+    font-size: 32 px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-shadow: 0 0 10 px black;
+}
+
+.btn-outline-primary.hover {
+    background-color: #042f68 !important;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #042f68 !important;
+    color: white;
+}
+
+.btn-lg {
+    width: 10vw;
+}
+
+.btn {
+    font-weight: 600;
+}
+
+@media only screen and(max-width: 1330px) {
+
+    .buttons {
+        margin-bottom: 5vh !important;
+        margin-right: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .btn-lg {
+        margin-right: 0 !important;
+        margin-bottom: 2vh !important;
+        width: 140px;
+        height: 45px;
+    }
+
+    .media {
+        height: 50vh !important;
+    }
+}
+
+@media only screen and(max-width: 1200px) {
+    .hero-container {
+        top: 50%;
+        left: 50%;
+    }
+
+    @media only screen and(max-width: 375px) {
+        .media {
+            height: 40vh !important;
+        }
+    }
+}
