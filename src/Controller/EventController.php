@@ -95,4 +95,41 @@ class EventController extends AbstractController
         $this->addFlash('notice', 'Event deleted');
         return $this->redirectToRoute('app_event');
     }
+
+    #[Route('/concerts', name: 'concerts_event')]
+    public function filterConcerts(ManagerRegistry $doctrine): Response
+    {
+        $repository = $doctrine->getRepository(Event::class);
+        $events = $repository->findBy(['type' => 'concert']);
+
+        return $this->render('event/concerts.html.twig', [
+            'events' => $events
+        ]);
+    }
+    #[Route('/operas', name: 'operas_event')]
+    public function filterOperas(ManagerRegistry $doctrine): Response
+    {
+        $repository = $doctrine->getRepository(Event::class);
+        $events = $repository->findBy(['type' => 'opera']);
+
+        return $this->render('event/operas.html.twig', [
+            'events' => $events
+        ]);
+    }
+    #[Route('/plays', name: 'plays_event')]
+    public function filterPlays(ManagerRegistry $doctrine): Response
+    {
+        $repository = $doctrine->getRepository(Event::class);
+        $events = $repository->findBy(['type' => 'theatre']);
+
+        return $this->render('event/plays.html.twig', [
+            'events' => $events
+        ]);
+    }
+    // Bonus Points:
+
+    // (20) Create filtering depending on the event type (hint: pass the information to the URL)
+    // Hint: you could use the method findBy()
+    // $repository = $this->getDoctrine()->getRepository(Event::class);
+    // $events = $repository->findBy(['type' => 'music']);
 }

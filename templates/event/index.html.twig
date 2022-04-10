@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
 {% block title %}
 	Hello!
 {% endblock %}
@@ -23,42 +22,73 @@
 		<p>Upcoming events:</p>
 	</div>
 
-	<div id="container" class="row justify-content-center p-5 g-4 mt-0 pt-0">
+	<div class="d-flex justify-content-center">
+		<div class='buttons mb-1 d-flex justify-content-center me-3'>
+			<a href='/'>
+				<button class='btn btn-primary' type="button">
+					Filter:</button>
+			</a>
+		</div>
+		<div class='buttons mb-1 d-flex justify-content-center me-1'>
+			<a href='/concerts'>
+				<button class='btn btn-outline' type="button">
+					concerts
+				</button>
+			</a>
+		</div>
+		<div class='buttons mb-1 d-flex justify-content-center me-1'>
+			<a href='/operas'>
+				<button class='btn btn-outline' type="button">
+					operas
+				</button>
+			</a>
+		</div>
+		<div class='buttons mb-1 d-flex justify-content-center me-2'>
+			<a href='/plays'>
+				<button class='btn btn-outline' type="button">
+					plays
+				</button>
+			</a>
+		</div>
 
-		{% for event in events %}
+	</div>
+</div>
 
-			{# CARD #}
-			<div class='card text-center me-3' style='width: 19rem;'>
-				<img class='card-img-top mt-3' src="{{asset('pictures/' ~ event.picture )}}" style=' height: 22vh;'>
-				<div class='card-body' style='height: 12vh;'>
-					<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
-				</div>
-				<ul class='list-group list-group-flush'>
-					<li class='list-group-item'>
-						<strong>Location:</strong>
-						{{event.address}}</li>
-					<li class='list-group-item'>
-						<strong>Date:</strong>
-						{{event.eventDate|date()}}</li>
+<div id="container" class="row justify-content-center p-5 g-4 mt-0 pt-0">
 
-				</ul>
-				<div class='card-body'>
-					<a href='/details/{{event.id}}' class='btn btn-primary w-50 mb-1'>Details</a><br/>
-					<a href='/edit/{{event.id}}' class='btn btn-success w-50 mb-1'>Update</a><br/>
-					<a href='/delete/{{event.id}}' class='btn btn-danger w-50 mb-1'>Delete</a>
-				</div>
+	{% for event in events %}
+
+		{# CARD #}
+		<div class='card text-center me-3' style='width: 19rem;'>
+			<img class='card-img-top mt-3' src="{{asset('pictures/' ~ event.picture )}}" style=' height: 22vh;'>
+			<div class='card-body' style='height: 12vh;'>
+				<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
 			</div>
+			<ul class='list-group list-group-flush'>
+				<li class='list-group-item'>
+					<strong>Location:</strong>
+					{{event.address}}</li>
+				<li class='list-group-item'>
+					<strong>Date:</strong>
+					{{event.eventDate|date()}}</li>
 
-		{% endfor %}
+			</ul>
+			<div class='card-body'>
+				<a href='/details/{{event.id}}' class='btn btn-primary w-50 mb-1'>Details</a><br/>
+				<a href='/edit/{{event.id}}' class='btn btn-success w-50 mb-1'>Update</a><br/>
+				<a href='/delete/{{event.id}}' class='btn btn-danger w-50 mb-1'>Delete</a>
+			</div>
+		</div>
 
-	</div>
-	{# BUTTON ADD #}
-	<div class='buttons mb-5 d-flex justify-content-center me-3'>
-		<a href='/create'>
-			<button class='btn btn-primary btn-lg' type="button">
-				Add Event
-			</button>
-		</a>
-	</div>
-	{% include 'components/footer.html.twig' %}
-{% endblock %}
+	{% endfor %}
+
+</div>
+{# BUTTON ADD #}
+<div class='buttons mb-5 d-flex justify-content-center me-3'>
+	<a href='/create'>
+		<button class='btn btn-primary btn-lg' type="button">
+			Add Event
+		</button>
+	</a>
+</div>
+{% include 'components/footer.html.twig' %}{% endblock %}
