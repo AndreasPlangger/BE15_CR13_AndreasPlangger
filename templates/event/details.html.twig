@@ -2,31 +2,31 @@
 
 
 {% block body %}
+	<div class="container mt-3">
+		<h2 class="page-header">
+			Event details:</h2>
 
-	<h2 class="page-header">
-		Event details:</h2>
-
-	<div
-		id="container" class="row justify-content-center p-5 g-4 mt-0 pt-0">
-		{# CARD #}
-		<div class='card text-center me-3' style='width: 22rem;'>
-			<img class='card-img-top mt-3' src="{{asset('pictures/' ~ event.picture )}}" style=' height: 22vh;'>
-			<div class='card-body' style='height: 44vh;'>
-				<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
-				<p class='card-text'>{{event.description}}</p>
-			</div>
-			<ul class='list-group list-group-flush'>
-				<li class='list-group-item'>
-					<strong>Date:</strong>
-					{{event.eventDate|date()}}</li>
-				<li class='list-group-item'>
-					<strong>Type of event:</strong>
-					{{event.type}}</li>
-			</ul>
-			<div class='card-body'>
-				<a href='/' class='btn btn-primary w-50 mb-1'>Back</a><br/>
+		<div
+			id="container" class="row justify-content-center p-5 g-4 mt-0 pt-0">
+			{# CARD #}
+			<div class='card text-center me-3' style='width: 45vw;'>
+				<img class='card-img-top mt-3' src="{{asset('pictures/' ~ event.picture )}}" style=' height: auto;'>
+				<div class='card-body' style='height: 35vh;'>
+					<h5 class='card-title' style='font-weight: bold;'>{{event.eventName}}</h5>
+					<p class='card-text'>{{event.description}}</p>
+				</div>
+				<ul class='list-group list-group-flush'>
+					<li class='list-group-item'>
+						<strong>Date:</strong>
+						{{event.eventDate|date()}}</li>
+					<li class='list-group-item'>
+						<strong>Type of event:</strong>
+						{{event.type}}</li>
+				</ul>
+				<div class='card-body'>
+					<a href='/' class='btn btn-primary w-50 mb-1'>Back</a><br/>
+				</div>
 			</div>
 		</div>
-
 	</div>
 {% endblock %}

@@ -51,7 +51,7 @@ class AddEventType extends AbstractType
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Create Event',
-                'attr' => ['class' => 'btn-primary', 'style' => 'margin-bottom:15px',  'background-color: #3c6ac0 !important', 'color: white']
+                'attr' => ['class' => 'btn-primary btn-lg', 'style' => 'margin-bottom:15px',  'background-color: #3c6ac0 !important', 'color: white']
             ]);
     }
     public function configureOptions(OptionsResolver $resolver): void

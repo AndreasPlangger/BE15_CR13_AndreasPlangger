@@ -31,11 +31,13 @@ html {
 
 .btn-outline-primary.hover {
     background-color: #042f68 !important;
+    border-color: #042f68 !important;
     color: white;
 }
 
 .btn-primary {
     background-color: #042f68 !important;
+    border-color: #042f68 !important;
     color: white;
 }
 
